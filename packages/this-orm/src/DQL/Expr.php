@@ -177,4 +177,9 @@ final class Expr
     {
         return new AggregateExpression('MAX', $field, $alias);
     }
+
+    public static function on(string $field, string $refField): ExpressionNode
+    {
+        return self::equal($field, self::columnRef($refField));
+    }
 }

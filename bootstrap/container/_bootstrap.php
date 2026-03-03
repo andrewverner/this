@@ -5,6 +5,7 @@
 
 use App\This\Infrastructure\Container\Container;
 use This\Contracts\ContainerInterface;
+use This\ORM\Container\OrmContainer;
 
 $lambdas = [
     require_once __DIR__ . '/handlers.php',
@@ -14,6 +15,7 @@ $lambdas = [
     \This\TemplateEngine\Container\TemplateEngineContainer::register(),
     \This\Session\Container\SessionContainer::register(),
     \This\Security\Container\SecurityContainer::register(),
+    ORMContainer::register(),
 ];
 
 return function () use ($lambdas): ContainerInterface {

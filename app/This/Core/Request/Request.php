@@ -328,4 +328,9 @@ final class Request implements RequestInterface
             parse_str($this->body, $this->bodyAttributes);
         }
     }
+
+    public function isPost(): bool
+    {
+        return $this->post !== [];
+    }
 }

@@ -88,4 +88,6 @@ interface RequestInterface
     public function getBodyParameter(string $name, $default = null): ?string;
 
     public function getBodyParameters(): array;
+
+    public function isPost(): bool;
 }
